@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Lista de Usuários</h1>
+  
+    <div class="searchbar">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar usuário" (input)="searchUser()">
+  
+   
+    <button (click)="sortUsers()">Ordenar por Nome</button>
+</div>
+  
+    
+    <ul>
+      <li *ngFor="let user of filteredUsers">
+        <h3>{{ user.name }}</h3>
+        <p>Email: {{ user.email }}</p>
+        <p>Empresa: {{ user.company.name }}</p>
+      </li>
+    </ul>
+  </div>
+  
