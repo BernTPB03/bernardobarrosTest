@@ -1,0 +1,47 @@
+Sub CalcularMediaVendas()
+    Dim ultimaLinha As Long
+    Dim i As Long
+    Dim totalEletronicos As Double
+    Dim totalAcessorios As Double
+    Dim contadorEletronicos As Long
+    Dim contadorAcessorios As Long
+    Dim categoriaAtual As String
+    
+   
+    ultimaLinha = Sheets("Vendas").Cells(Rows.Count, 1).End(xlUp).Row
+    
+    
+    totalEletronicos = 0
+    totalAcessorios = 0
+    contadorEletronicos = 0
+    contadorAcessorios = 0
+    
+   
+    For i = 2 To ultimaLinha
+        categoriaAtual = Sheets("Vendas").Cells(i, 2).Value
+        
+        If categoriaAtual = "Eletrônicos" Then
+            totalEletronicos = totalEletronicos + Sheets("Vendas").Cells(i, 3).Value
+            contadorEletronicos = contadorEletronicos + 1
+        ElseIf categoriaAtual = "Acessórios" Then
+            totalAcessorios = totalAcessorios + Sheets("Vendas").Cells(i, 3).Value
+            contadorAcessorios = contadorAcessorios + 1
+        End If
+    Next i
+    
+    
+    Sheets("VBA").Range("A1").Value = "Categoria"
+    Sheets("VBA").Range("B1").Value = "Média de Vendas"
+    
+    
+    If contadorEletronicos > 0 Then
+        Sheets("VBA").Range("A2").Value = "Eletrônicos"
+        Sheets("VBA").Range("B2").Value = totalEletronicos / contadorEletronicos
+    End If
+    
+    
+    If contadorAcessorios > 0 Then
+        Sheets("VBA").Range("A3").Value = "Acessórios"
+        Sheets("VBA").Range("B3").Value = totalAcessorios / contadorAcessorios
+    End If
+End Sub
