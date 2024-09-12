@@ -2,6 +2,7 @@ Projeto: Avaliação Técnica - Full Stack e Data Analysis
 # **Estrutura do Projeto**
 ## **1. Desenvolvimento Frontend (Angular)**
 Diretório: testeBernardo/ (para visualização no JSONPlaceholder)/ Etapa\_1\_local/ (para visualização em backend local)
+Nos dois casos, o front consumirá e exibirá informações, porém, no diretório: 'testeBernardo/' será do JSONPlaceholder, necessitando apenas do frontend rodando
 
 
 Descrição: Página web construída em Angular que se conecta ao backend e exibe uma lista de produtos, com funcionalidade de:
